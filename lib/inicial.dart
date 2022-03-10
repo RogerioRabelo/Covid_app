@@ -1,7 +1,10 @@
+import 'package:covid_app/fluxos.dart';
 import 'package:covid_app/form.dart';
 import 'package:covid_app/principal.dart';
 import 'package:covid_app/protocolo.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttericon/entypo_icons.dart';
+
 
 class inicial extends StatefulWidget {
   final data;
@@ -31,14 +34,16 @@ class _inicialState extends State<inicial> {
       principal(),
       form(url[widget.data]),
       protocolo(),
+      fluxos(),
     ];
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: controlador,
         onTap: (index) => setState(() => controlador = index),
         backgroundColor: Color(0xFFfff4f4),
         selectedItemColor: Colors.red,
-        unselectedItemColor: Colors.red[20],
+        unselectedItemColor: Colors.grey,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -51,6 +56,10 @@ class _inicialState extends State<inicial> {
           BottomNavigationBarItem(
             icon: Icon(Icons.thumb_up_outlined),
             label: 'Protocolos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Entypo.flow_tree),
+            label: 'Condutas',
           ),
         ],
       ),

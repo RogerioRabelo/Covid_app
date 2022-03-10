@@ -1,7 +1,8 @@
-
 import 'package:flutter/material.dart';
 
 class protocolo extends StatelessWidget {
+  const protocolo({ Key? key }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +18,6 @@ class protocolo extends StatelessWidget {
           width: 10,
           height: 10,
         ),
-        
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -33,13 +33,16 @@ class protocolo extends StatelessWidget {
               SizedBox(
                 height: 8,
               ),
-              Text(
-                'https://coronavirus.saude.mg.gov.br/protocolos',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  fontSize: 15,
+              TextButton(
+                  child: Text(
+                    'https://coronavirus.saude.mg.gov.br/protocolos',
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      fontSize: 15,
+                    ),
+                  ),
+                  onPressed: () {},
                 ),
-              ),
               SizedBox(
                 height: 20,
               ),

@@ -33,23 +33,6 @@ class form extends StatelessWidget {
           color: Colors.white,
           child: Column(
             children: [
-              AlertDialog(
-      title: Text(
-        'ATENÇÃO',
-        textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.red),
-      ),
-      content: Text(
-        'Esse formulário não é destinado a alunos',
-        textAlign: TextAlign.center,
-      ),
-      actions: [
-        Center(
-            child: ElevatedButton(
-                onPressed: () => Navigator.of(context).pop(true),
-                child: Text('Ok')))
-      ],
-    ),
               SizedBox(
                 height: 5,
               ),
@@ -62,7 +45,7 @@ class form extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    'alterar campus',
+                    'Alterar campus',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15),
                   ),

@@ -30,16 +30,14 @@ class _selecionarState extends State<selecionar> {
   Widget build(BuildContext context) {
     return Material(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(40, 100, 40, 100),
+        padding: const EdgeInsets.fromLTRB(40,10,40,0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
               'assets/telaInicial.jpeg',
-              width: 250,
-              height: 250,
-            ),
-            SizedBox(
-              height: 10,
+              width: 350,
+              height: 350,
             ),
             Text(
               'Selecione o campus:',
@@ -76,6 +74,9 @@ class _selecionarState extends State<selecionar> {
               style: ElevatedButton.styleFrom(
                   primary: Colors.red[900], minimumSize: Size(150, 35)),
             ),
+            SizedBox(height: 15,),
+            Image.asset('assets/linha.jpeg',height: 2,),
+            SizedBox(height: MediaQuery.of(context).size.height*0.2,),
           ],
         ),
       ),

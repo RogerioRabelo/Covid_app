@@ -32,11 +32,15 @@ class _principalState extends State<principal> {
       'https://docs.google.com/forms/d/e/1FAIpQLSfEAbWGr6l4lP9o8laZKtSGEU03FkB6Le4ce2RmslvjjKjCVQ/viewform';
 
   Widget criarImagem(String url) => Container(
-        margin: EdgeInsets.symmetric(horizontal: 12),
-        color: Colors.grey,
+      margin: EdgeInsets.symmetric(horizontal: 2),
+      height: MediaQuery.of(context).size.height*0.4,
+      width: MediaQuery.of(context).size.width*0.7,
         child: Image.asset(
           url,
           fit: BoxFit.cover,
+        ),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.red,width: 2),
         ),
       );
 
@@ -77,11 +81,12 @@ class _principalState extends State<principal> {
         backgroundColor: Color(0xFFfff4f4),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(25.0, 25, 25, 0),
+        padding: const EdgeInsets.fromLTRB(25.0, 10, 25, 0),
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CarouselSlider.builder(
                 itemCount: listaUrl.length,
@@ -103,18 +108,20 @@ class _principalState extends State<principal> {
               ),
               indicador(),
               SizedBox(
-                height: 32.0,
+                height: 16,
               ),
-              SizedBox(
-                height: 10,
-              ),
+              Image.asset('assets/linha.jpeg',height: 2,),
+              SizedBox(height: 16,),
               Text(
-                'Como meio de monitorar o número de casos da Covid-19 dentro da UFSJ, torna-se viável a utilização desse aplciativo para facilitar a comunicação coordenador e sistema.',
+                'Este aplicativo foi desenvolvido para trazer informações relevantes, auxiliar o monitoramento e notificações de casos de Covid-19 na comunidade da UFSJ.',
                 style: TextStyle(
                   fontSize: 17,
                 ),
                 textAlign: TextAlign.center,
               ),
+              SizedBox(height: 16,),
+              Image.asset('assets/linha.jpeg',height: 2,width: 250,),
+              SizedBox(height: MediaQuery.of(context).size.height*0.1,)
             ],
           ),
         ),

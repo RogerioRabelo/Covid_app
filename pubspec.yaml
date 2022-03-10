@@ -45,6 +45,12 @@ dependencies:
 
   shared_preferences: ^2.0.13
 
+  fluttericon: ^2.0.0
+
+
+
+
+
 
 
 
@@ -122,6 +128,15 @@ flutter:
    - assets/sobre1.jpeg
    - assets/sobre2.jpeg
    - assets/sobre3.jpeg
+   - assets/F1.jpg
+   - assets/F2.png
+   - assets/F3.png
+   - assets/F4.png
+   - assets/linha.jpeg
+   - assets/Fluxo1.jpeg
+   - assets/Fluxo2.jpeg
+   - assets/Fluxo3.jpeg
+   - assets/Fluxo4.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
