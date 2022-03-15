@@ -37,7 +37,7 @@ class _principalState extends State<principal> {
       width: MediaQuery.of(context).size.width*0.7,
         child: Image.asset(
           url,
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.red,width: 2),

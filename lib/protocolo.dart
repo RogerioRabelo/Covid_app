@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 class protocolo extends StatelessWidget {
-  const protocolo({ Key? key }) : super(key: key);
+  const protocolo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,20 +41,20 @@ class protocolo extends StatelessWidget {
                       fontSize: 15,
                     ),
                   ),
-                  onPressed: () {},
-                ),
+                 // https://coronavirus.saude.mg.gov.br/cidadao
+                  onPressed: () async {
+                    var url = 'https://coronavirus.saude.mg.gov.br/protocolos';
+                    if(await canLaunch(url)){
+                      await launch(url);
+                    }
+                    else{
+                      throw('Não foi possível carregar o link');
+                    }
+                  }),
               SizedBox(
                 height: 20,
               ),
               Row(children: [
-                Expanded(
-                  child: Image.asset(
-                    'assets/lavar-as-maos.jpg',
-                    fit: BoxFit.cover,
-                    height: 200,
-                    width: 200,
-                  ),
-                ),
                 Expanded(
                   child: Text(
                     'Lave bem as mãos com água e sabão;',
@@ -64,32 +64,20 @@ class protocolo extends StatelessWidget {
                     ),
                   ),
                 ),
+                Expanded(
+                  child: Image.asset(
+                    'assets/lavar-as-maos.png',
+                    fit: BoxFit.cover,
+                    height: 200,
+                    width: 200,
+                  ),
+                ),
               ]),
               Row(
                 children: [
                   Expanded(
-                    child: Text(
-                      'Mantenha uma distancia segura de pelo menos 2 metros e sempre use máscara;',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  Expanded(
                     child: Image.asset(
-                      'assets/distanciamento_social.jpg',
-                      height: 200,
-                      width: 200,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Image.asset(
-                      'assets/nao_toque.jpg',
+                      'assets/nao_toque.png',
                       height: 200,
                       width: 200,
                     ),
@@ -118,7 +106,7 @@ class protocolo extends StatelessWidget {
                   ),
                   Expanded(
                     child: Image.asset(
-                      'assets/lenço.jpg',
+                      'assets/lenço.png',
                       height: 200,
                       width: 200,
                     ),
@@ -129,38 +117,18 @@ class protocolo extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Image.asset(
-                      'assets/medico.jpg',
+                      'assets/medico.png',
                       height: 200,
                       width: 200,
                     ),
                   ),
                   Expanded(
                     child: Text(
-                      'Procure atendimento médico se tiver freb, tosse e dificuldade para respirar;',
+                      'Procure atendimento médico se tiver febre, tosse e dificuldade para respirar;',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 20,
                       ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Fique em casa se você se sentir indisposto;',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Image.asset(
-                      'assets/casa.jpg',
-                      height: 200,
-                      width: 200,
                     ),
                   ),
                 ],

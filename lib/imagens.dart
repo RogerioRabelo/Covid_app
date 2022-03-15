@@ -12,10 +12,12 @@ class imagens extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset(
-          'assets/logo5.png',
-          width: 10,
-          height: 10,
+        leading: IconButton(
+          onPressed: Navigator.of(context).pop,
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.red,
+          ),
         ),
         title: Text(
           'Condutas',
@@ -25,7 +27,11 @@ class imagens extends StatelessWidget {
         backgroundColor: Color(0xFFfff4f4),
       ),
       body: InteractiveViewer(
-        child: Center(child: Image.asset(assets[index],fit: BoxFit.cover,)),
+        child: Center(
+            child: Image.asset(
+          assets[index],
+          fit: BoxFit.cover,
+        )),
       ),
     );
   }

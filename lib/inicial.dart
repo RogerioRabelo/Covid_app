@@ -47,11 +47,11 @@ class _inicialState extends State<inicial> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Pagina inicial',
+            label: 'Inicio',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notification_important_outlined),
-            label: 'Notificar casos',
+            label: 'Notificar',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.thumb_up_outlined),
